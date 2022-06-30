@@ -5,7 +5,8 @@ const timeEl = document.getElementById("time");
 const boardEl = document.getElementById("board");
 
 let time = 0;
-let score;
+let score = 0;
+let idSetInterval = 0;
 
 startBtn.addEventListener("click", handlerStartBtn);
 
@@ -52,6 +53,29 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function setTime(timeGame) {
+  timeEl.innerHTML = "00:${timeGame}";
+}
 function startGame() {
+  idSetInterval = setInterval(decTime, 1000);
   createRandomCircle();
+  setTime(time);
+}
+
+function decTime() {
+  if (time === 0) {
+    finishGAme();
+  } else {
+    let current = --time;
+    if (current < 10) {
+      current = "0${current}";
+    }
+
+    setTime(current);
+  }
+}
+function finishGame() {
+  timeEl.parentNode.style.display = "none";
+  clearInterval(idSetInterval);
+  boardEl.innerHTML = "<p>shet your: ${score}</p>";
 }
