@@ -56,6 +56,7 @@ function getRandomNum(min, max) {
 function setTime(timeGame) {
   timeEl.innerHTML = "00:${timeGame}";
 }
+
 function startGame() {
   idSetInterval = setInterval(decTime, 1000);
   createRandomCircle();
@@ -64,16 +65,17 @@ function startGame() {
 
 function decTime() {
   if (time === 0) {
-    finishGAme();
+    finishGame();
   } else {
     let current = --time;
     if (current < 10) {
-      current = "0${current}";
+      current = "00:${current}";
     }
 
     setTime(current);
   }
 }
+
 function finishGame() {
   timeEl.parentNode.style.display = "none";
   clearInterval(idSetInterval);
