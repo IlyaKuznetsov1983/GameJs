@@ -3,10 +3,14 @@ const slot = document.querySelectorAll(".slot");
 const timeController = document.getElementById("time-list");
 const timeEl = document.getElementById("time");
 const boardEl = document.getElementById("board");
+const modalWindow = document.querySelector(".modal")
+const finishButtons = document.querySelector(".modal__finish-buttons")
+const modal = document.querySelector(".modal__score")
 
 let time = 0;
 let score = 0;
 let idSetInterval = 0;
+let timeValue =0;
 
 startBtn.addEventListener("click", handlerStartBtn);
 
@@ -54,7 +58,7 @@ function getRandomNum(min, max) {
 }
 
 function setTime(timeGame) {
-  timeEl.innerHTML = "00:${timeGame}";
+  timeEl.innerHTML = `<span id="time">${timeGame}</span></h2>`;
 }
 
 function startGame() {
@@ -76,8 +80,8 @@ function decTime() {
   }
 }
 
-function finishGame() {
-  timeEl.parentNode.style.display = "none";
+function finishGame(e) {
+  timeEl.parentNode.style.visibility = "hidden";
   clearInterval(idSetInterval);
   boardEl.innerHTML = "<p>shet your: ${score}</p>";
 }
