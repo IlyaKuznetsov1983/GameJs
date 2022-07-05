@@ -73,15 +73,35 @@ function decTime() {
   } else {
     let current = --time;
     if (current < 10) {
-      current = "00:${current}";
+      current = `0${current}`;
     }
 
     setTime(current);
   }
 }
 
-function finishGame(e) {
-  timeEl.parentNode.style.visibility = "hidden";
+function finishGame() {
+  scoreElement.innerHTML = score;
+  modal.classList.add("open");
   clearInterval(idSetInterval);
-  boardEl.innerHTML = "<p>shet your: ${score}</p>";
+  
+}
+
+modal.addEventListener("click", handlerModalClick);
+
+function resetGame(){
+  this.classList.remove("open");
+  time = selectedTime;
+  score = 0;
+}
+
+function handleModalclick(e) {
+  if(e.target.classList.contains("modal__restartBtn")){
+    resetGame.call(this);
+    startGame();
+  }
+  if(e.target.classList,contains("modal__canselBtn")){
+    resetGame.call(this);
+    slot.forEach((slot) => slot,classList.remove("up"));
+  }
 }
