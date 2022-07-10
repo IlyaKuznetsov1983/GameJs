@@ -26,7 +26,7 @@ html {
   justify-content: center;
   height: 100vh;
   transition: margin 0.5s ease-in-out;
-  background: linear-gradient(#29323c, #485563);
+  background: linear-gradient(#343c46, #52606e);
 }
 
 .slot.up {
@@ -81,7 +81,7 @@ html {
   width: 500px;
   height: 500px;
   background: linear-gradient(118.38 deg, #29323c -4.7%, #485563 200.44%);
-  box-shadow: -8px -8px 20px #fff, -10px -7px 20px #fcff;
+  box-shadow: -8px -8px 20px rgb(238, 229, 229), -10px -7px 20px rgb(245, 177, 245);
   border-radius: 30px;
 }
 
