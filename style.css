@@ -81,14 +81,14 @@ html {
   width: 500px;
   height: 500px;
   background: linear-gradient(118.38 deg, #29323c -4.7%, #485563 200.44%);
-  box-shadow: -8px -8px 20px rgb(238, 229, 229), -10px -7px 20px rgb(245, 177, 245);
+  box-shadow: -8px -8px 20px rgb(238, 229, 229), -10px -7px 20px rgb(214, 190, 214);
   border-radius: 30px;
 }
 
 .circle {
   width: 50px;
   height: 50px;
-  background: linear-gradient(90 deg, #29323c 47%, #485563 200.1%);
+  background: linear-gradient(90 deg, #a2b2c4 47%, #485563 200.1%);
   position: absolute;
   border-radius: 50%;
   cursor: pointer;
